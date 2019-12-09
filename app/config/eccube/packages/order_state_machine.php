@@ -14,6 +14,10 @@
 use Eccube\Entity\Master\OrderStatus as Status;
 use Eccube\Service\OrderStateMachineContext;
 
+// mtb_order_status, mtb_customer_order_status, mtb_order_status_colorに以下を追加しておく.
+const NAMING = 100;  // 名入れ中
+const NAMED = 101;  // 名入れ完了
+
 $container->loadFromExtension('framework', [
     'workflows' => [
         'order' => [
@@ -35,9 +39,8 @@ $container->loadFromExtension('framework', [
                 (string) Status::PENDING,
                 (string) Status::PROCESSING,
                 (string) Status::RETURNED,
-                // mtb_order_status, mtb_customer_order_status, mtb_order_status_colorに以下を追加しておく.
-                '100',  // 名入れ中
-                '101',  // 名入れ完了
+                (string) NAMING,
+                (string) NAMED,
             ],
             'transitions' => [
                 'pay' => [
@@ -57,7 +60,7 @@ $container->loadFromExtension('framework', [
                     'to' => (string) Status::IN_PROGRESS,
                 ],
                 'ship' => [
-                    'from' => [(string) Status::NEW, (string) Status::PAID, (string) Status::IN_PROGRESS, '101'],
+                    'from' => [(string) Status::NEW, (string) Status::PAID, (string) Status::IN_PROGRESS, NAMED],
                     // 'from' => [(string) Status::NEW, (string) Status::PAID, (string) Status::IN_PROGRESS],
                     'to' => [(string) Status::DELIVERED],
                 ],
@@ -72,12 +75,12 @@ $container->loadFromExtension('framework', [
                 // 新規→名入れ中への遷移.
                 'to_naire' => [
                     'from' => (string) Status::NEW,
-                    'to' => '100',
+                    'to' => (string) NAMING,
                 ],
                 // 名入れ中→名入れ完了への遷移.
                 'to_naire_complete' => [
-                    'from' => '100',
-                    'to' => '101',
+                    'from' => (string) NAMING,
+                    'to' => (string) NAMED,
                 ],
             ],
         ],
