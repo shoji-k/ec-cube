@@ -1,3 +1,12 @@
+# 2019-12-09 at EC-CUBE 勉強会
+
+カスタマイズハンズオン
+[勉強会\_名入れカスタマイズ \- Google Slides](https://docs.google.com/presentation/d/1vdKP4Mgw3MYZhCZBptpsCiYhxYWj815xoJQUNJo0EVc/mobilepresent?fbclid=IwAR1b9A9Kfj67L0KhN4jAbDygVYdEBzQFQ6XnR3mquYDR4Bt5V9Jve-DoTdU&slide=id.g7abfb9776c_0_6)
+
+- 名入れ機能の実装
+- order state machine
+- EventSubscriberでのアクション追加
+
 # EC-CUBE 4.0
 
 [![Build Status](https://travis-ci.com/EC-CUBE/ec-cube.svg?branch=4.0)](https://travis-ci.com/EC-CUBE/ec-cube)
@@ -10,9 +19,9 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 
-+ 本ドキュメントはEC-CUBEの開発者を主要な対象者としております。  
-+ パッケージ版は正式リリース後に[EC-CUBEオフィシャルサイト](http://www.ec-cube.net)で配布します。  
-+ カスタマイズやEC-CUBEの利用、仕様に関しては[開発コミュニティ](http://xoops.ec-cube.net)をご利用ください。  
++ 本ドキュメントはEC-CUBEの開発者を主要な対象者としております。
++ パッケージ版は正式リリース後に[EC-CUBEオフィシャルサイト](http://www.ec-cube.net)で配布します。
++ カスタマイズやEC-CUBEの利用、仕様に関しては[開発コミュニティ](http://xoops.ec-cube.net)をご利用ください。
 + 本体開発にあたって不明点などあれば[Issue](https://github.com/EC-CUBE/ec-cube/wiki/Issues%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95)をご利用下さい。
 + EC-CUBE 3.0系のについては、masterブランチにて開発を行っております。
 + EC-CUBE 2.13系の保守については、[EC-CUBE/eccube-2_13](https://github.com/EC-CUBE/eccube-2_13/)にて開発を行っております。
@@ -40,8 +49,8 @@ npm run build # Sass のビルド
 
 * Apache/2.4.x (mod_rewrite / mod_ssl 必須)
 * PHP7.1.20
-* PostgreSQL 9.2.1   
-* ブラウザー：Google Chrome  
+* PostgreSQL 9.2.1
+* ブラウザー：Google Chrome
 
 詳しくは開発ドキュメントの [システム要件](http://doc4.ec-cube.net/quickstart_requirement) をご確認ください。
 
@@ -50,17 +59,17 @@ npm run build # Sass のビルド
 ### [EC-CUBE 4.0 開発ドキュメント@doc4.ec-cube.net](http://doc4.ec-cube.net/)
 
 
-EC-CUBE 4.0 の仕様や手順、開発Tipsに関するドキュメントを掲載しています。  
-修正や追記、新規ドキュメントの作成をいただく場合、以下のレポジトリからPullRequestをお送りください。  
+EC-CUBE 4.0 の仕様や手順、開発Tipsに関するドキュメントを掲載しています。
+修正や追記、新規ドキュメントの作成をいただく場合、以下のレポジトリからPullRequestをお送りください。
 [https://github.com/EC-CUBE/ec-cube.github.io](https://github.com/EC-CUBE/ec-cube.github.io)
 
 ## 開発への参加
 
-EC-CUBE 4.0の不具合の修正、機能のブラッシュアップを目的として、継続的に開発を行っております。  
-コードのリファクタリング、不具合修正以外のPullRequestを送る際は、Pull Requestのコメントなどに意図を明確に記載してください。  
+EC-CUBE 4.0の不具合の修正、機能のブラッシュアップを目的として、継続的に開発を行っております。
+コードのリファクタリング、不具合修正以外のPullRequestを送る際は、Pull Requestのコメントなどに意図を明確に記載してください。
 
-Pull Requestの送信前に、Issueにて提議いただく事も可能です。  
-Issuesの利用方法については、[こちら](https://github.com/EC-CUBE/ec-cube/wiki/Issues%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95)をご確認ください。  
+Pull Requestの送信前に、Issueにて提議いただく事も可能です。
+Issuesの利用方法については、[こちら](https://github.com/EC-CUBE/ec-cube/wiki/Issues%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95)をご確認ください。
 
 [Slack](https://www.ec-cube.net/rd.php?aid=join-slack)でも本体の開発に関する意見交換などを行っております。
 
